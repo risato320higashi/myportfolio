@@ -1,0 +1,713 @@
+body {
+  background-color: #FFFFF5; /* 背景色を薄いクリーム色に設定 */
+  color: #333; /* 文字色をダークグレーに設定 */
+  font-family: "Noto Sans JP", sans-serif; /* フォントファミリーをNoto Sans JPに設定 */
+  line-height: 1.6; /* 行間を設定 */
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0px auto;
+  padding: 30px 20px; /* 左右のパディングを追加 */
+  padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
+  z-index: 1; /* ヘッダーの下に配置 */
+  position: relative; /* 相対位置指定 */
+}
+
+/* ヘッダー */
+header{
+  padding: 0 35px;  /* ヘッダーの左右のパディング */
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* 垂直方向の中央揃え */
+  justify-content: space-between; /* 水平方向のスペースを均等に配置 */
+  position: fixed; /* 固定位置 */
+  top: 0; /* 上端に固定 */
+  width: 100%; 
+  height: 60px; 
+  background-color: #FFFFF5; /* 背景色を薄いクリーム色に設定 */
+  transition: all 0.8s; /* スクロール時のアニメーション効果を追加 */
+  z-index: 1000; /* ヘッダーを最前面に表示 */
+}
+
+/* 固定ヘッダーのスタイル */
+header.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #50504E; /* 固定ヘッダーの背景色をダークグレーに設定 */
+  transition: all 0.8s; /* スクロール時のアニメーション効果を追加 */
+}
+
+/* 固定ヘッダーのテキストの色 */
+header.fixed a {
+  color: #ffffff; /* 固定ヘッダーのタイトルの文字色を白に設定 */
+}
+
+h1{
+  font-size: 1.5em;
+  font-weight: normal;
+}
+
+header.fixed h1 {
+  color: #ffffff; /* 固定ヘッダーのタイトルの文字色を白に設定 */
+}
+
+header ul {
+  display: flex; /* フレックスボックスを使用してリストを横並びに */
+  justify-content: center; /* 中央揃え */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+}
+
+header ul li {
+  padding: 0 20px; /* 各リストアイテムの左右のパディング */
+  font-size: 1.2em; /* フォントサイズの設定 */
+}
+
+/* ナビゲーション */
+header ul li a {
+  position: relative; /* 相対位置指定 */
+  text-decoration: none;  /* リンクの下線を削除 */
+  color: #333;  /* リンクの文字色をダークグレーに設定 */
+}
+
+.hamburger {
+  display: none; /* デフォルトでは非表示 */
+}
+
+.nav-menu{
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  background-color: #50504E; /* 背景色をダークグレーに設定 */
+  transition: ease .3s;
+}
+/* 下線のスタイル */
+header ul li a::after {
+  background-color: #333; /* 下線の色 */
+  bottom: -5px; /* 要素の下端からの距離 */
+  content: ""; /* 要素に内容を追加 */
+  height: 1px; /* 下線の高さ */
+  left: 0; /* 要素の左端からの距離 */
+  opacity: 0; /* 不透明度 */
+  position: absolute; /* 絶対位置指定 */
+  transition: all 0.7s; /* アニメーション効果を追加 */
+  width: 100%; /* 要素の幅 */
+}
+
+/* 固定ヘッダーの下線のスタイル */
+header.fixed ul li a::after {
+  background-color: #fff; /* 下線の色 */
+}
+
+/* リンクのホバー時 */
+header ul li a:hover {
+  cursor : pointer; /* ホバー時のカーソルをポインターに変更 */
+}
+
+/* リンクにホバーした際の下線の表示 */
+header ul li a:hover::after {
+  opacity: 1; /* 不透明度を変更してフェードイン */
+}
+
+/* メイン画像 */
+.main-image {
+  padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
+  width: 100%; /* メイン画像の幅を100%に設定 */
+  height: 600px; /* メイン画像の高さを設定 */
+}
+
+.main-image img {
+  height: 100%; /* 画像の高さを100%に設定 */
+  object-fit: cover; /* 画像のアスペクト比を維持しつつ、要素全体をカバー */
+  object-position: center -50px;
+}
+
+img {
+  width: 100%; /* 画像の幅を100%に設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+
+h2{
+  font-family:"Playfair Display", serif;
+  font-size: 3.0em;
+  padding-bottom: 30px; /* タイトルの下にスペースを追加 */
+}
+
+/* 見出しの下線 */
+h2::after {
+  content: ""; /* 擬似要素の内容を空に設定 */
+  display: block; /* ブロック要素として表示 */
+  width: 100%; /* 下線の幅 */
+  height: 2px; /* 下線の高さ */
+  background-color: #50504E; /* 下線の色をダークグレーに設定 */
+  margin-top: 10px; /* タイトルと下線の間にスペースを追加 */
+}
+
+/* 見出しの最初の文字色を変える */
+h2::first-letter{
+  color: #DDA853; /* タイトルの最初の文字の色をダークグレーに設定 */
+}
+
+/* 作品リスト */
+.works-list {
+  display: grid; /* グリッドレイアウトを使用 */
+  grid-template-columns: repeat(3, 1fr); /* 3列のグリッド */
+  gap: 30px; /* グリッドアイテム間のスペース */
+  padding: 30px; /* グリッド全体のパディング */  
+}
+
+/* workアイテム */
+.work-item {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に配置 */  
+  transition: all 0.3s; /* アニメーション効果を追加 */
+}
+
+/* workアイテムをホバーした際 */
+.work-item img:hover {
+  cursor : pointer; /* ホバー時のカーソルをポインターに変更 */
+  transition: opacity 0.3s ease;
+  opacity: 0.5;
+}
+
+.work-image {
+  width: 100%; /* 画像の幅を100%に設定 */
+}
+.work-item img {
+  width: 100%; /* 画像の幅を100%に設定 */
+}
+
+.work-item h3 {
+  font-size: 1.0em; /* タイトルのフォントサイズ */
+}
+
+.work-item p {
+  font-size: 0.9em; /* 説明文のフォントサイズ */
+  color: #666; /* 説明文の文字色を薄いグレーに設定 */
+}
+
+/* ボタン */
+button {
+  font-size: 1.0em; /* フォントサイズを設定 */
+  transition: all 0.3s; /* アニメーション効果を追加 */
+}
+
+button a {
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #333; /* リンクの文字色を設定 */
+  border: solid 1.5px #333; /* ボタンの枠線をダークグレーに設定 */
+  padding: 10px 30px; /* ボタンのパディングを設定 */
+  border-radius: 45px; /* ボタンの角を丸くする */
+  transition: all 0.3s; /* アニメーション効果を追加 */
+}
+
+/* ボタンのホバー時 */
+button:hover {
+  cursor: pointer; /* ホバー時のカーソルをポインターに変更 */
+}
+
+button a:hover {
+  color: #fff; /* リンクの文字色を設定 */
+  border: solid 1.5px #50504E; /* ボタンの枠線をダークグレーに設定 */
+  background-color: #50504E; /* 枠線内の背景色をダークグレーに変更 */
+}
+
+.works-button {
+  padding: 10px 30px; /* ボタンのパディングを設定 */
+}
+
+
+/* プロフィールセクション */
+.profile{
+  padding-top: 20px; /* プロフィールセクションの上部パディング */
+  display: flex; /* フレックスボックスを使用 */
+  align-items: center; /* 垂直方向の中央揃え */
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center; /* 水平方向にセンターに配置 */
+  align-items: center;
+  margin:0 auto 5%;
+  padding-right: 30px; /* 右側のパディングを追加 */
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius:50%;
+}
+
+.profile h3{
+  margin-bottom: 30px; /* プロフィールタイトルの下にスペースを追加 */
+  font-size: 1.2em; /* タイトルのフォントサイズ */
+  font-weight: normal; /* フォントの太さを通常に設定 */
+}
+
+.profile p {
+  display: inline-block; /* インラインブロック要素として表示 */
+  padding-bottom: 30px; /* 説明文の下にスペースを追加 */
+}
+
+.contact-list {
+  display: flex; /* フレックスボックスを使用 */
+  padding: 50px 0; /* 上下のパディングを追加 */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+}
+
+.contact-list li {
+  padding-right: 50px; /* 各リストアイテムの右側にスペースを追加 */
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0, 
+  'opsz' 24;
+} 
+
+.insta-icon {
+  width: 24px; /* アイコンの幅 */
+  height: 24px; /* アイコンの高さ */
+}
+
+.insta-icon img {
+  width: 100%; /* アイコンの幅を100%に設定 */
+  height: auto; /* 高さを自動調整 */
+}
+
+.contact-list a {
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #333; /* リンクの文字色をダークグレーに設定 */
+  border: solid 1.5px #333; /* ボタンの枠線をダークグレーに設定 */
+  padding: 10px 30px; /* ボタンのパディングを設定 */
+  border-radius: 45px; /* ボタンの角を丸くする */
+  display: inline-block; /* インラインブロック要素として表示 */
+  vertical-align: middle; /* 上下中央寄せ */
+  transition: all 0.3s; /* アニメーション効果を追加 */
+}
+
+.contact-list span {
+  display: inline-block; /* インラインブロック要素として表示 */
+  vertical-align: middle; /* 上下中央寄せ */
+  padding-left: 5px; /* アイコンとテキストの間にスペースを追加 */
+}
+
+/* アイコンのホバー時 */
+.contact-list a:hover {
+  cursor: pointer; /* ホバー時のカーソルをポインターに変更 */
+  color: #fff; /* リンクの文字色を白に設定 */
+  border: solid 1.5px #50504E; /* ボタンの枠線をダークグレーに設定 */
+  background-color: #50504E; /* 枠線内の背景色をダークグレーに変更 */
+}
+
+/* 画像切り替え: 黒→白アイコン（JSでwhiteクラスを付与） */
+.insta-icon img.white {
+  content: url("../img/Instagram_Glyph_White.png");
+}
+
+
+/* フッター */
+footer {
+  background-color: #50504E; /* フッターの背景色をダークグレーに設定 */
+  color: #fff; /* フッターの文字色を白に設定 */
+  text-align: center; /* フッターのテキストを中央揃え */
+  padding: 20px 35px; /* 上下のパディングを追加 */
+  font-size: 1.0em; /* フォントサイズを小さく設定 */
+}
+
+footer ul {
+  display: flex; /* フレックスボックスを使用 */
+  list-style: none; /* リストのデフォルトスタイルを削除 */
+  padding-bottom: 50px; /* フッターの下部にスペースを追加 */
+}
+
+footer ul li {
+  padding: 0 20px; /* 各リストアイテムのパディング */
+}
+
+footer ul li a {
+  text-decoration: none; /* リンクの下線を削除 */
+  color: #fff; /* リンクの文字色を白に設定 */
+  position: relative; /* 相対位置指定 */
+}
+
+/* 下線のスタイル */
+footer ul li a::after {
+  background-color: #fff; /* 下線の色 */
+  bottom: -5px; /* 要素の下端からの距離 */
+  content: ""; /* 要素に内容を追加 */
+  height: 1px; /* 下線の高さ */
+  left: 0; /* 要素の左端からの距離 */
+  opacity: 0; /* 不透明度 */
+  position: absolute; /* 絶対位置指定 */
+  transition: all 0.7s; /* アニメーション効果を追加 */
+  width: 100%; /* 要素の幅 */
+}
+
+/* リンクのホバー時 */
+footer ul li a:hover {
+  cursor : pointer; /* ホバー時のカーソルをポインターに変更 */
+}
+
+/* リンクにホバーした際の下線の表示 */
+footer ul li a:hover::after {
+  opacity: 1; /* 不透明度を変更してフェードイン */
+}
+
+/* ここからはabout.htmlのCSS */
+.biography{
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に配置 */
+  padding: 0 100px; /* 左のパディングを追加 */
+}
+
+.biography-item{
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に配置 */  
+  padding-bottom: 50px; /* アイテム全体のパディング */
+}
+
+.biography h4{
+  font-size: 1.2em; /* タイトルのフォントサイズ */
+  font-weight: normal; /* フォントの太さを通常に設定 */
+  padding-bottom: 20px; /* タイトルの下にスペースを追加 */
+  color: #DDA853; /* タイトルの文字色をオレンジに設定 */
+  position: relative; /* 相対位置指定 */
+
+}
+
+.biography h4::before {
+  content: "●"; /* タイトルの前に●を追加 */
+  width: 70px;
+  height: 70px;
+  font-size: 60px;
+  position: absolute; /* 絶対位置指定 */
+  left: -100px; /* 左側に配置 */
+  top: 0px; /* 上側に配置 */
+  z-index: 2;
+  color: #D9D9D9; /* ●の色を薄いグレーに設定 */
+}
+
+.biography h4:not(#last-h4)::after {
+  content: "";
+  position: absolute;
+  left: -72px; /* 円の中心に合わせる */
+  top: 70px; /* 円の下端から開始 */
+  width: 5px;/* 線の太さ */
+  height: 300px; /* 線の長さ */
+  background: #D9D9D9;
+  z-index: 1;
+}
+
+.biography h4#third-h4::after {
+  height: 240px; /* 線の長さ */
+}
+
+.biography-title{
+  font-size: 1.5em; /* タイトルのフォントサイズ */
+  font-weight: normal; /* フォントの太さを通常に設定 */
+  padding-bottom: 20px; /* タイトルの下にスペースを追加 */
+}
+
+/* スキルリスト */
+.skill-list {
+  display: grid; /* グリッドレイアウトを使用 */
+  grid-template-columns: repeat(2, 1fr); /* 2列のグリッド */
+  column-gap: 50px; /* 列間のスペース */
+  row-gap: 40px; /* 行間のスペース */
+  padding: 30px; /* グリッド全体のパディング */
+}
+
+/* スキルアイテム */
+.skill-item {
+  display: flex; /* フレックスボックスを使用 */
+}
+
+/* スキルアイテムのアイコン */
+.skill-item .skill-icon {
+  width: 50px; /* アイコンの幅 */
+  height: 50px; /* アイコンの高さ */
+  min-width: 50px;
+  min-height: 50px;
+  max-width: 50px;
+  max-height: 50px;
+  margin: 0 20px 0 0; /* アイコンとテキストの間にスペースを追加 */
+  display: flex; /* フレックスボックスを使用 */
+  align-items: start; /* 垂直方向の開始位置に配置 */
+}
+
+/* スキルアイテムのアイコン画像 */
+.skill-item .skill-icon img {
+  width: 50px; /* 画像の幅を50pxに固定 */
+  height: 50px; /* 画像の高さを50pxに固定 */
+  object-fit: contain; /* 画像のアスペクト比を維持 */
+}
+
+/* スキルアイテムのテキスト */
+.skill-item .skill-text {
+  display: flex; /* フレックスボックスを使用 */
+  flex-direction: column; /* 縦方向に配置 */
+}
+
+.skill-item .skill-text h3 {
+  font-size: 1.2em; /* タイトルのフォントサイズ */
+  font-weight: normal; /* フォントの太さを通常に設定 */
+  padding-bottom: 20px; /* タイトルの下にスペースを追加 */
+}
+
+.skill-item .skill-text p {
+  font-size: 1.2em; /* 説明文のフォントサイズ */
+}
+
+@media screen and (max-width: 650px) {
+  .wrapper {
+  padding: 0px 20px; /* 左右のパディングを追加 */  
+  padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
+
+  }
+
+  /* ハンバーガーメニュー*/
+  .header-menu {
+    display: none; /* ヘッダーメニューを非表示 */
+  }
+
+  .hamburger {
+    display: block; /* ハンバーガーメニューを表示 */
+    cursor: pointer; /* カーソルをポインターに変更 */
+    position: absolute; /* 絶対位置指定 */
+    right: 20px; /* ヘッダーの右端に配置 */
+    margin: 30px 0; /* 上下のマージンを追加 */
+  }
+
+  .hamburger span {
+    display: block; /* ハンバーガーメニューのバーを表示 */
+    width: 30px; /* バーの幅 */
+    height: 2px; /* バーの高さ */
+    border-radius: 10px;
+    background-color: #333; /* バーの色をダークグレーに設定 */
+    margin: 5px auto; /* 上下のマージンを追加 */
+    transition: all 0.3s; /* アニメーション効果を追加 */
+    z-index: 1000; /* ハンバーガーメニューを最前面に表示 */
+    position: relative;
+  }
+
+  /* ハンバーガーメニュークリック後のスタイル */
+  .nav-menu.active {
+    transform: translateX(0);
+  }
+  .hamburger span:nth-child(1){
+    top: 2px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 4px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 6px;
+  }
+
+  .hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(-315deg);
+    top: 2px;
+    background-color: #fff; /* バーの色を白に設定 */
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(315deg);
+    background-color: #fff; /* バーの色を白に設定 */
+    top: 6px;
+  }
+
+  .nav-menu.acvtive {
+    position: fixed;  /* 固定位置 */
+    top: 0; /* 上端に配置 */
+    left: 0; /* 左端に配置 */
+    width: 100%; /* 幅を100%に設定 */
+    height: 100%; /* 高さを100%に設定 */
+    background-color: #50504E; /* 背景色を設定 */
+    z-index: 999; /* 前面に表示 */
+  }
+
+  /* ハンバーメニューの色 */
+  header.fixed .hamburger span {
+    background-color: #fff;
+    transition: all 0.8s;
+  }
+
+  .nav-menu ul{
+    flex-direction: column; /* ヘッダーを縦方向に配置 */
+    padding: 50px 20px; /* ヘッダーのパディングを調整 */
+  }
+  .nav-menu ul li {
+    padding: 15px 0; /* 各リストアイテムの上下のパディング */
+    display: flex; /* フレックスボックスを使用 */
+    justify-content: space-between; /* 水平方向のスペースを均等に配置 */
+    align-items: center; /* 垂直方向の中央揃え */
+    position: relative;
+  }
+
+  .divider {
+  display: block; /* インラインブロック要素として表示 */
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-top: solid 2px #fff;
+  border-right: solid 2px #fff;
+  transform: rotate(45deg);
+  }
+
+  .nav-menu ul li p {
+    display: block; /* インラインブロック要素として表示 */
+  }
+  .nav-menu ul li a {
+    color: #fff; /* リンクの文字色を白に設定 */
+    position: relative;
+    display: flex; /* フレックスボックスを使用 */
+    align-items: center; /* 垂直方向の中央揃え */
+    justify-content: space-between; /* 水平方向のスペースを均等に配置 */
+    width: 100%; /* リンクの幅を100%に設定 */
+  }
+
+  /* 下線のスタイル */
+  .nav-menu ul li a::after {
+    background-color: #fff; /* 下線の色 */
+    bottom: -5px; /* 要素の下端からの距離 */
+    content: ""; /* 要素に内容を追加 */
+    height: 1px; /* 下線の高さ */
+    left: 0; /* 要素の左端からの距離 */
+    opacity: 0; /* 不透明度 */
+    position: absolute; /* 絶対位置指定 */
+    transition: all 0.7s; /* アニメーション効果を追加 */
+    width: 100%; /* 要素の幅 */
+  }
+
+
+  /* メイン画像 */
+  .main-image {
+    height: 300px; /* メイン画像の高さを300pxに設定 */
+  }
+
+  .main-image img {
+  object-position: center 0px;
+  }
+
+  .works-list {
+    padding: 0;
+    grid-template-columns: repeat(1, 1fr); /* 1列に変更 */
+  }
+  
+  .button{
+    text-align: center; /* ボタンを中央揃え */
+  }
+
+
+  .skill-list {
+    padding: 0 30px 30px 30px;
+    grid-template-columns: 1fr; /* スキルリストを1列に変更 */
+  }
+  
+  .profile {
+    flex-direction: column; /* プロフィールセクションを縦方向に配置 */
+    align-items: center; /* 中央揃え */
+  }
+  
+  .profile-image {
+  padding: 0px; /* パディング０ */
+}
+
+.profile-image{
+  width: 350px; /* プロフィール画像の幅を350pxに設定 */
+  height: 350px; /* プロフィール画像の高さを350pxに設定 */
+  margin: 0 auto; /* 中央揃え */
+}
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 30px; /* 画像の下にスペースを追加 */
+}
+
+  .profile h3 {
+    text-align: center; /* タイトルを中央揃え */
+  }
+  
+  .profile p {
+    text-align: center; /* 説明文を中央揃え */
+  }
+  .contact-list {
+    flex-direction: column; /* リストを縦方向に配置 */
+    align-items: center; /* 中央揃え */
+  }
+  
+  .contact-list li {
+    padding-right: 0; /* 各リストアイテムの右側のパディングを削除 */
+    margin-bottom: 20px; /* 各リストアイテムの下にスペースを追加 */
+  }
+  
+  .contact-list a {
+    padding: 10px 20px; /* ボタンのパディングを調整 */
+  }
+
+  footer{
+    padding: 20px 20px; /* フッターのパディングを調整 */
+  }
+  footer ul {
+    flex-direction: column; /* フッターのリストを縦方向に配置 */
+    padding-bottom: 20px; /* フッターの下部にスペースを追加 */
+    text-align: left; /* フッターのテキストを左揃え */
+  }
+
+  footer ul li {
+    padding: 10px 0;
+  }
+
+  .biography{
+  padding: 0 20px 0 60px; /* 左右のパディングを追加 */
+  }
+  
+  .biography h4::before {
+  font-size: 40px;
+  position: absolute; /* 絶対位置指定 */
+  left: -50px; /* 左側に配置 */
+  top: 0px; /* 上側に配置 */
+  }
+
+  .biography h4:not(#last-h4)::after {
+    position: absolute;
+    left: -32px; /* 円の中心に合わせる */
+    top: 30px; /* 円の下端から開始 */
+    width: 4px;/* 線の太さ */
+    height: 300px; /* 線の長さ */
+    background: #D9D9D9;
+    z-index: 1;
+  }
+
+  .biography h4#first-h4::after {
+  height: 400px; /* 線の長さ */
+  }
+
+  .biography h4#second-h4::after {
+  height: 500px; /* 線の長さ */
+  }
+  .biography h4#third-h4::after {
+  height: 280px; /* 線の長さ */
+  }
+
+}
+@media screen and (max-width: 400px) {
+  .biography h4#first-h4::after {
+  height: 420px; /* 線の長さ */
+  }
+  .biography h4#third-h4::after {
+  height: 400px; /* 線の長さ */
+  }
+}
