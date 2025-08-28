@@ -9,7 +9,7 @@ body {
   width: 100%;
   max-width: 1100px;
   margin: 0px auto;
-  padding: 30px 20px; /* 左右のパディングを追加 */
+  padding: 0px 20px; /* 左右のパディングを追加 */
   padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
   z-index: 1; /* ヘッダーの下に配置 */
   position: relative; /* 相対位置指定 */
@@ -119,13 +119,14 @@ header ul li a:hover::after {
 .main-image {
   padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
   width: 100%; /* メイン画像の幅を100%に設定 */
-  height: 700px; /* メイン画像の高さを設定 */
+  height: 600px;
+  background: url(../img/main.png);
+  background-repeat: no-repeat;
 }
 
 .main-image img {
-  height: 100%; /* 画像の高さを100%に設定 */
   object-fit: cover; /* 画像のアスペクト比を維持しつつ、要素全体をカバー */
-  object-position: center -50px;
+  object-position: 50% 70%;
 }
 
 img {
@@ -228,7 +229,7 @@ button a:hover {
 }
 
 .works-button {
-  padding: 10px 30px; /* ボタンのパディングを設定 */
+  padding: 10px 0px; /* ボタンのパディングを設定 */
 }
 
 
@@ -268,7 +269,7 @@ button a:hover {
 
 .contact-list {
   display: flex; /* フレックスボックスを使用 */
-  padding: 50px 0; /* 上下のパディングを追加 */
+  padding: 30px 0; /* 上下のパディングを追加 */
   list-style: none; /* リストのデフォルトスタイルを削除 */
 }
 
@@ -491,9 +492,10 @@ footer ul li a:hover::after {
 
 /* ここからworksの詳細ページ */
 .article-body h1 {
-  font-family:"Noto Sans JP", sans-serif; /* フォントファミリーをNoto Sans JPに設定 */
-  font-size: 1.2em;
+  font-family: "Playfair Display", serif;
+  font-size: 2.5em;
   padding-top: 20px;
+  letter-spacing: 1px;
 }
 
 .article-body h1::after {
@@ -507,7 +509,8 @@ footer ul li a:hover::after {
 .article-body h3 {
   padding-top: 20px;
   font-size: 1.0em; /* タイトルのフォントサイズ */
-  font-weight: normal; /* フォントの太さを通常に設定 */
+  font-weight: bold; /* フォントの太さをboldに設定 */
+  font-family: "Playfair Display", serif; 
 }
 
 .article-body p {
@@ -529,11 +532,19 @@ footer ul li a:hover::after {
   margin-top: 30px;
 }
 
-.article-body li{
+.article-body p{
   font-size: 0.8em;
+  padding-top: 5px;
 }
 
-.article-title::after {
+ h4{
+  font-family: "Playfair Display", serif; 
+  font-size: 0.8em;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+h4::after {
   content: ""; /* 擬似要素の内容を空に設定 */
   display: block; /* ブロック要素として表示 */
   width: 100%; /* 下線の幅 */
@@ -543,6 +554,7 @@ footer ul li a:hover::after {
 }
 
 .article-body li{
+  font-size: 0.8em;
   list-style: none; /* リストのデフォルトスタイルを削除 */
   padding-top: 5px;
 }
@@ -686,10 +698,6 @@ footer ul li a:hover::after {
   /* メイン画像 */
   .main-image {
     height: 300px; /* メイン画像の高さを300pxに設定 */
-  }
-
-  .main-image img {
-  object-position: center 0px;
   }
 
   .works-list {
