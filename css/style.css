@@ -185,7 +185,7 @@ h2::first-letter{
 .work-item img {
   height: 220px;
   object-fit: cover;  /* 枠内でトリミングして表示 */
-  object-position: center; /* 中央寄せ */
+  object-position: top; /* TOP寄せ */
 }
 
 .work-item a {
@@ -193,7 +193,7 @@ h2::first-letter{
   color: #333; /* リンクの文字色をダークグレーに設定 */
 }
 .work-item h3 {
-  font-size: 0.8em; /* タイトルのフォントサイズ */
+  font-size: 1.0em; /* タイトルのフォントサイズ */
   font-weight: normal; /* フォントの太さを通常に設定 */
 }
 
