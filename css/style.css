@@ -791,22 +791,25 @@ h4::after {
   }
 
   .biography h4#first-h4::after {
-  height: 400px; /* 線の長さ */
+  height: 200px; /* 線の長さ */
   }
 
   .biography h4#second-h4::after {
-  height: 300px; /* 線の長さ */
+  height: 220px; /* 線の長さ */
   }
   .biography h4#third-h4::after {
-  height: 220px; /* 線の長さ */
+  height: 190px; /* 線の長さ */
   }
 
 }
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 460px) {
   .biography h4#first-h4::after {
   height: 420px; /* 線の長さ */
   }
-  .biography h4#third-h4::after {
+  .biography h4#second-h4::after {
   height: 260px; /* 線の長さ */
+  }
+  .biography h4#third-h4::after {
+  height: 230px; /* 線の長さ */
   }
 }
