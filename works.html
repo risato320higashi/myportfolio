@@ -16,6 +16,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Gravitas+One&family=Josefin+Sans&family=Jost:ital,wght@0,100..900;1,100..900&family=Noto+Sans+JP&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 
 <body>
@@ -45,8 +49,16 @@
             </ul>
         </nav>
     </header>
-    <div class="main-image">
-      <img src="img/main-text.png" alt="ポートフォリオのテキスト画像">
+    <div class="carousel">
+      <div class="carousel-images1">
+        <img src="img/main-text.png" alt="ポートフォリオのメイン文字">
+      </div>
+      <div class="carousel-images2">
+        <img src="img/main-text.png" alt="ポートフォリオのメイン文字">
+      </div>
+      <div class="carousel-images3">
+        <img src="img/main-text.png" alt="ポートフォリオのメイン文字">
+      </div>
     </div>
     <section id="works" class="wrapper">
         <h2>WORKS</h2>
@@ -158,6 +170,7 @@
     </footer>
     <!-- body直前でjQueryと自作のJSファイルの読み込み  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

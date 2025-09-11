@@ -27,3 +27,11 @@ navMenu.addEventListener('click', function() {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
 });
+
+$('.carousel').slick({
+    autoplay: true, // 自動再生を有効にする
+    autoplaySpeed: 3000, // 自動再生の速度（ミリ秒）
+    dots: true, // ドットナビゲーションを表示する
+    infinite: true, // 無限ループを有効にする
+    fade: true // フェードイン・アウトを有効にする
+});

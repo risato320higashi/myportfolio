@@ -116,26 +116,52 @@ header ul li a:hover::after {
 }
 
 /* メイン画像 */
-.main-image {
+.carousel {
   padding-top: 60px; /* ヘッダーの高さ分の余白をいれ、うしろの要素が隠れないようにする */
   width: 100%; /* メイン画像の幅を100%に設定 */
   height: 600px;
   background: url(../img/main.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  display: flex;
-  text-align: center;
 }
 
-.main-image img {
-  object-fit: contain;
-  padding: 80px 80px 60px 80px;
+.carousel-images1{
+  width: 100%;
+  background: url(../img/main.png);
+  background-repeat: no-repeat;
+  background-size: cover; /* 画面幅いっぱいに表示 */
+  position: relative;
+}
+
+.carousel-images2{
+  width: 100%;
+  background: url(../img/main2.png);
+  background-repeat: no-repeat;
+  background-size: cover; /* 画面幅いっぱいに表示 */
+  position: relative;
+}
+
+.carousel-images3{
+  width: 100%;
+  background: url(../img/main3.png);
+  background-repeat: no-repeat;
+  background-size: cover; /* 画面幅いっぱいに表示 */
+  position: relative;
+}
+
+.carousel img{
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 img {
   width: 100%; /* 画像の幅を100%に設定 */
   margin: 0 auto; /* 中央揃え */
 }
+
 
 h2{
   font-family:"Playfair Display", serif;
@@ -188,7 +214,7 @@ h2::first-letter{
 .work-item img {
   height: 220px;
   object-fit: cover;  /* 枠内でトリミングして表示 */
-  object-position: top; /* TOP寄せ */
+  object-position: center; /* 中央寄せ */
 }
 
 .work-item a {
@@ -196,7 +222,7 @@ h2::first-letter{
   color: #333; /* リンクの文字色をダークグレーに設定 */
 }
 .work-item h3 {
-  font-size: 1.0em; /* タイトルのフォントサイズ */
+  font-size: 0.8em; /* タイトルのフォントサイズ */
   font-weight: normal; /* フォントの太さを通常に設定 */
 }
 
@@ -420,7 +446,7 @@ footer ul li a:hover::after {
   content: "";
   position: absolute;
   left: -72px; /* 円の中心に合わせる */
-  top: 50px; /* 円の下端から開始 */
+  top: 70px; /* 円の下端から開始 */
   width: 3px;/* 線の太さ */
   height: 350px; /* 線の長さ */
   background: #D9D9D9;
@@ -510,7 +536,7 @@ footer ul li a:hover::after {
   margin: 20px 0; /* タイトルと下線の間にスペースを追加 */
 }
 .article-body h3 {
-  padding-top: 30px;
+  padding-top: 20px;
   font-size: 1.0em; /* タイトルのフォントサイズ */
   font-weight: bold; /* フォントの太さをboldに設定 */
   font-family: "Playfair Display", serif; 
@@ -537,6 +563,7 @@ footer ul li a:hover::after {
 
 .article-body p{
   font-size: 0.8em;
+  padding-top: 5px;
 }
 
  h4{
@@ -552,12 +579,13 @@ h4::after {
   width: 100%; /* 下線の幅 */
   height: 1px; /* 下線の高さ */
   background-color: #50504E; /* 下線の色をダークグレーに設定 */
-  margin: 10px 0; /* タイトルと下線の間にスペースを追加 */
+  margin: 20px 0; /* タイトルと下線の間にスペースを追加 */
 }
 
 .article-body li{
   font-size: 0.8em;
   list-style: none; /* リストのデフォルトスタイルを削除 */
+  padding-top: 5px;
 }
 
 #back-button {
@@ -697,13 +725,10 @@ h4::after {
 
 
   /* メイン画像 */
-  .main-image {
+  .carousel {
     height: 300px; /* メイン画像の高さを300pxに設定 */
   }
-  
-  .main-image img{
-    padding: 30px 30px 10px 30px;
-  }
+
   .works-list {
     padding: 0 0 30px 0; /* ボタンとのパディング */
     grid-template-columns: repeat(1, 1fr); /* 1列に変更 */
@@ -795,25 +820,22 @@ h4::after {
   }
 
   .biography h4#first-h4::after {
-  height: 200px; /* 線の長さ */
+  height: 400px; /* 線の長さ */
   }
 
   .biography h4#second-h4::after {
-  height: 220px; /* 線の長さ */
+  height: 300px; /* 線の長さ */
   }
   .biography h4#third-h4::after {
-  height: 190px; /* 線の長さ */
+  height: 220px; /* 線の長さ */
   }
 
 }
-@media screen and (max-width: 460px) {
+@media screen and (max-width: 420px) {
   .biography h4#first-h4::after {
   height: 420px; /* 線の長さ */
   }
-  .biography h4#second-h4::after {
-  height: 260px; /* 線の長さ */
-  }
   .biography h4#third-h4::after {
-  height: 230px; /* 線の長さ */
+  height: 260px; /* 線の長さ */
   }
 }
