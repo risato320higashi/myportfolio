@@ -571,14 +571,14 @@ footer ul li a:hover::after {
   padding-top: 5px;
 }
 
- h4{
+.works-detail{
   font-family: "Playfair Display", serif; 
   font-size: 0.8em;
   margin-top: 5px;
   font-weight: normal;
 }
 
-h4::after {
+.works-detail::after {
   content: ""; /* 擬似要素の内容を空に設定 */
   display: block; /* ブロック要素として表示 */
   width: 100%; /* 下線の幅 */
