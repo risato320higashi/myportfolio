@@ -50,6 +50,11 @@ h1{
   font-weight: normal;
 }
 
+header a {
+  text-decoration: none;  /* リンクの下線を削除 */
+  color: #333;  /* リンクの文字色をダークグレーに設定 */
+}
+
 header.fixed h1 {
   color: #ffffff; /* 固定ヘッダーのタイトルの文字色を白に設定 */
 }
